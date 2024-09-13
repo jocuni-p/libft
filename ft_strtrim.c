@@ -9,10 +9,11 @@
 /*   Updated: 2023/07/06 11:25:11 by jocuni-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*Elimina todos los caracteres de la string ’set’ desde el principio y desde el
- * final de ’s1’, hasta encontrar un caracter no perteneciente a ’set’. Retorna 
- * un puntero a la reserva de memoria con el string resultante. Retorna NULL si
- * falla la reserva de memoria.*/
+
+/*Elimina de "s1" todos los caracteres "set" que encuentra al inicio y al final
+del string hasta que topa con algun caracter diferente y se para. Retorna un 
+puntero al nuevo string mallocado resultante o NULL si falla la reserva de 
+memoria.*/
 
 //#include<stdlib.h>
 //#include<stdio.h>
