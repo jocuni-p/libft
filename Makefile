@@ -10,6 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
+#---------------------VARIABLES-----------------------#
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
@@ -17,7 +18,7 @@ CFLAGS = -Wall -Werror -Wextra
 NAME = libft.a
 
 #'ar' es una utilitat per crear i mantenir grups d'arxius combinats en un sol
-#arxu i l'usarem  per crear la llibreria
+#arxiu i l'usarem  per crear la llibreria
 #'r' la reeemplasara si existeix ja i la creara si no existeix
 #'c' fa que es silencii el missatge de la creacio de ar
 #'s' escriu un index d'arxius objecte a dins per el seu control intern
@@ -38,13 +39,13 @@ SRC_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c\
 			ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c\
 			ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
-
 #aqui detallem nom dels objects
 #genera una llista de noms d'arxius .o a partir de la lista de noms .c
 OBJ = $(SRC:.c=.o)
 
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
+#-------------------------RULES-----------------------#
 #al fer make la primera regla que trova es la que executa, sino s'especifica
 #una altre
 all: $(NAME)
@@ -72,12 +73,12 @@ $(NAME): $(OBJ)
 #La var automatica $< agafa el nom del .c (src) i $@ el dona al .o (target)
 
 
-#borra els arxius creats .o i els .bonus
+#elimina els arxius creats .o i els .bonus
 clean:
 	rm -f *.o .bonus
 # amb -f ignorem els arxius que no existeixen, borrats ja previament
 
-#fa clean i a mes borra el binary executable
+#fa 'clean' i elimina el binary executable
 fclean: clean
 	rm -f $(NAME)
 
